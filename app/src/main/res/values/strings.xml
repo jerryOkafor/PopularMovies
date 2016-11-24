@@ -1,0 +1,16 @@
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <string name="app_name">Popular Movies</string>
+    <string name="title_activity_home">Popular Movies</string>
+    <string name="title_activity_movie_detail">MovieDetailActivity</string>
+    <string name="pref_sorting_order_key">pref_Sorting_Order</string>
+    <string name="overview">Overview</string>
+    <string name="sample_overview">A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.</string>
+    <string name="sample_original_name">Fight Club</string>
+    <string name="sample_date">Nov. 26, 2016</string>
+    <!--Using xliff:g prevents translations-->
+    <string name="fmt_vote_average">Vote Average : <xliff:g id="vote">%.2f</xliff:g></string>
+    <string name="no_movie_to_display">No Movie to display</string>
+    <string name="sort_item_top_rated">top_rated</string>
+    <string name="sort_item_popular">popular</string>
+    <string name="ensure_tha_you_have_internet_connection">Ensure tha you have internet connection</string>
+</resources>

@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+//define our api key
+def THE_MOVIE_DB_API_KEY = '"' + TheMovieDbApiKey + '"' ?: '"Define The Movie Db Api Key"';
+
+android.buildTypes.each{type->
+    type.buildConfigField 'String', 'THE_MOVIE_DB_API_KEY', THE_MOVIE_DB_API_KEY
+
+}
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.bellman.pm"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    compile "com.android.support:design:$rootProject.supportVersion"
+    compile "com.android.support:support-v4:$rootProject.supportVersion"
+
+    //Glide dependency for loading images
+    compile "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
+    //retrofit and gson converter for network calls
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+
+    //compile the google guava class for common utility and validations
+    compile "com.google.guava:guava:$rootProject.guavaVersion"
+
+    testCompile 'junit:junit:4.12'
+}
