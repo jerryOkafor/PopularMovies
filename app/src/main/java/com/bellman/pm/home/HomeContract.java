@@ -5,7 +5,6 @@ import com.bellman.pm.BaseView;
 import com.bellman.pm.home.model.Movie;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Potencio on 11/20/2016.
@@ -27,11 +26,12 @@ import java.util.List;
 
 public class HomeContract {
     interface View extends BaseView<Presenter> {
-        void setRefreshing();
-        void setNotRefreshing();
-        void setmMovies(ArrayList<Movie> mMovies);
-        void showEmptyView();
+        void showLoadingProgress();
+        void hideLoadingProgress();
+        void setMovies(ArrayList<Movie> mMovies);
+        void showEmptyView(int type);
         void hideEmptyView();
+        void loadFavoriteMovies();
 
     }
 
@@ -41,6 +41,7 @@ public class HomeContract {
         void showEmptyView();
         void hideEmptyView();
         void refreshMovies();
+        void loadData();
 
     }
 }

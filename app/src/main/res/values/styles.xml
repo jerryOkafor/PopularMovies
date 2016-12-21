@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -17,7 +18,20 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TrailerTvStyle" parent="Base.TextAppearance.AppCompat.Caption">
+        <item name="android:drawableLeft">@drawable/ic_play_arrow</item>
+        <item name="android:background">@drawable/trailer_tv_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/trailer_tv_text_size</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
 
+    <!--DIALOG FULL SCREEN STYLE-->
+    <style name="MY_DIALOG" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <item name="android:windowIsFloating">false</item>
 
-
+    </style>
 </resources>

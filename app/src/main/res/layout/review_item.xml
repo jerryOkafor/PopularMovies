@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="review"
+            type="com.bellman.pm.review.model.Review"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_5"
+        android:layout_margin="@dimen/margin_5"
+        android:background="@drawable/item_review_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@{review.author}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/review_name_text_size"
+            android:id="@+id/tv_author" />
+            <TextView
+                android:text="@{review.content}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_10"
+                android:gravity="fill"
+                android:autoLink="web"
+                android:textSize="@dimen/review_tv_size"
+                android:textColor="@color/color_white"
+                android:overScrollMode="ifContentScrolls"
+                android:id="@+id/textView3" />
+    </LinearLayout>
+</layout>

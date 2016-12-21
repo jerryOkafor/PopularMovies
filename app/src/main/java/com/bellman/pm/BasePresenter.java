@@ -19,5 +19,5 @@ package com.bellman.pm;
  */
 
 public interface BasePresenter {
-    void start();
+    void start(long movieId);
 }

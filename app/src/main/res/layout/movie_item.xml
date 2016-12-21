@@ -4,6 +4,7 @@
     android:layout_height="@dimen/poster_height"
     android:orientation="vertical">
     <ImageView
+        android:contentDescription="@string/poster_image"
         android:id="@+id/movie_poster"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

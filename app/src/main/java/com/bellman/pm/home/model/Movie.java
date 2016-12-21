@@ -3,8 +3,6 @@ package com.bellman.pm.home.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
-
 /**
  * Created by Potencio on 11/19/2016.
  * <p>
@@ -26,35 +24,22 @@ import java.util.List;
 public class Movie implements Parcelable {
 
     private String posterPath;
-    private boolean adult;
     private String overview;
     private String releaseDate;
-    private List<Integer> genreIds;
     private int id;
     private String originalTitle;
-    private String originalLanguage;
-    private String title;
-    private String backdropPath;
-    private String popularity;
-    private int voteCount;
-    private boolean video;
+    private double popularity;
     private double voteAverage;
 
 
-    public Movie(String posterPath, boolean adult, String overview, String releaseDate, List<Integer> genreIds, int id, String originalTitle, String originalLanguage, String title, String backdropPath, String popularity, int voteCount, boolean vidoe, double voteAverage) {
+    public Movie(String posterPath, String overview, String releaseDate, int id,
+                 String originalTitle, double popularity, double voteAverage) {
         this.posterPath = posterPath;
-        this.adult = adult;
         this.overview = overview;
         this.releaseDate = releaseDate;
-        this.genreIds = genreIds;
         this.id = id;
         this.originalTitle = originalTitle;
-        this.originalLanguage = originalLanguage;
-        this.title = title;
-        this.backdropPath = backdropPath;
         this.popularity = popularity;
-        this.voteCount = voteCount;
-        this.video = vidoe;
         this.voteAverage = voteAverage;
     }
 
@@ -64,17 +49,11 @@ public class Movie implements Parcelable {
 
     protected Movie(Parcel in) {
         posterPath = in.readString();
-        adult = in.readByte() != 0;
         overview = in.readString();
         releaseDate = in.readString();
         id = in.readInt();
         originalTitle = in.readString();
-        originalLanguage = in.readString();
-        title = in.readString();
-        backdropPath = in.readString();
-        popularity = in.readString();
-        voteCount = in.readInt();
-        video = in.readByte() != 0;
+        popularity = in.readDouble();
         voteAverage = in.readDouble();
     }
 
@@ -94,9 +73,6 @@ public class Movie implements Parcelable {
         return posterPath;
     }
 
-    public boolean isAdult() {
-        return adult;
-    }
 
     public String getOverview() {
         return overview;
@@ -115,29 +91,6 @@ public class Movie implements Parcelable {
         return originalTitle;
     }
 
-    public String getOriginalLanguage() {
-        return originalLanguage;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getBackdropPath() {
-        return backdropPath;
-    }
-
-    public String getPopularity() {
-        return popularity;
-    }
-
-    public int getVoteCount() {
-        return voteCount;
-    }
-
-    public boolean isVideo() {
-        return video;
-    }
 
     public double getVoteAverage() {
         return voteAverage;
@@ -145,11 +98,7 @@ public class Movie implements Parcelable {
 
     @Override
     public String toString() {
-        return "Movie: "+title;
-    }
-
-    public List<Integer> getGenreIds() {
-        return genreIds;
+        return "Movie: " + originalTitle;
     }
 
     @Override
@@ -160,17 +109,19 @@ public class Movie implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(posterPath);
-        parcel.writeByte((byte) (adult ? 1 : 0));
         parcel.writeString(overview);
         parcel.writeString(releaseDate);
         parcel.writeInt(id);
         parcel.writeString(originalTitle);
-        parcel.writeString(originalLanguage);
-        parcel.writeString(title);
-        parcel.writeString(backdropPath);
-        parcel.writeString(popularity);
-        parcel.writeInt(voteCount);
-        parcel.writeByte((byte) (video ? 1 : 0));
+        parcel.writeDouble(popularity);
         parcel.writeDouble(voteAverage);
+    }
+
+    public double getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(double popularity) {
+        this.popularity = popularity;
     }
 }
