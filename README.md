@@ -15,4 +15,7 @@ http://www.rainbowbreeze.it/environmental-variables-api-key-and-secret-buildconf
 https://developer.android.com/guide/topics/ui/controls/spinner.html
 
 http://stackoverflow.com/questions/26295481/android-swiperefreshlayout-how-to-implement-canchildscrollup-if-child-is-not-a-l
- 
+
+https://developer.android.com/guide/topics/providers/content-providers.html
+
+https://developer.android.com/guide/topics/providers/content-provider-basics.html
